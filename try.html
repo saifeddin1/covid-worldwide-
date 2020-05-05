@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+fetch('https://api.covid19api.com/summary')
+	.then((resp)=>resp.json())
+	.then(function(data){
+		document.write('<table border=1><tr><th>Country</th><th>Total Confirmed</th><th>Total Deaths</th><th>Total Recovered</th></tr>')
+		for ( i =0; i<data.Countries.length; i++) {
+			country = JSON.stringify(data.Countries[i]['Country']).slice(1, -1)
+			TotalConfirmed = JSON.stringify(data.Countries[i]['TotalConfirmed'])
+			TotalDeaths = JSON.stringify(data.Countries[i]['TotalDeaths'])
+			TotalRecovered = JSON.stringify(data.Countries[i]['TotalRecovered'])
+		document.write(`<tr><td>${country}</td><td>${TotalConfirmed}</td><td>${TotalDeaths}</td><td>${TotalRecovered}</td></tr>`)
+	}
+			document.write('</table>')
+
+	})
+</script>
+</body>
+</html>
