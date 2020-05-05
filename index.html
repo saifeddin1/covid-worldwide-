@@ -3,8 +3,13 @@
 <head>
 	<title></title>
 </head>
+<style type="text/css" media="screen">
+	th, td {
+		padding: 15px;
+	}
+</style>
 <body>
-
+<h1>Corona Status Worldwide</h1>
 <script type="text/javascript">
 fetch('https://api.covid19api.com/summary')
 	.then((resp)=>resp.json())
@@ -19,7 +24,7 @@ fetch('https://api.covid19api.com/summary')
 	}
 			document.write('</table></center>')
 
-	})
+	});
 </script>
 </body>
 </html>
