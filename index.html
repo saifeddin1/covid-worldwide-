@@ -14,7 +14,7 @@
 fetch('https://api.covid19api.com/summary')
 	.then((resp)=>resp.json())
 	.then(function(data){
-		document.write('<center><table border=1><tr><th>Country</th><th>Total Confirmed</th><th>Total Deaths</th><th>Total Recovered</th></tr>')
+		document.write('<h1>Corona Status Worldwide</h1><center><table border=1><tr><th>Country</th><th>Total Confirmed</th><th>Total Deaths</th><th>Total Recovered</th></tr>')
 		for ( i =0; i<data.Countries.length; i++) {
 			country = JSON.stringify(data.Countries[i]['Country']).slice(1, -1)
 			TotalConfirmed = JSON.stringify(data.Countries[i]['TotalConfirmed'])
